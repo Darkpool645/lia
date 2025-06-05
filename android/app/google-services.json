@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "413861923547",
+    "project_id": "edutec-dccb5",
+    "storage_bucket": "edutec-dccb5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413861923547:android:360a534c662ccdfc2e9afe",
+        "android_client_info": {
+          "package_name": "com.example.lia"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCy6CFP235c_hB4iG00zCC7OwsaXRfa0Ws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
