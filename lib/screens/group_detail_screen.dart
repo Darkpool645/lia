@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lia/models/group_model.dart';
 import 'package:lia/services/student_service.dart';
 import 'package:lia/models/student_model.dart';
+import 'package:lia/screens/take_attendance_screen.dart';
 import 'package:lia/screens/add_student_screen.dart';
 
 class GroupDetailScreen extends StatelessWidget {
@@ -12,7 +13,30 @@ class GroupDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(group.name)),
+      appBar: AppBar(
+        title: Text(group.name),
+        actions: [
+          PopupMenuButton<String>(
+            onSelected: (value) {
+              if (value == 'attendance') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => TakeAttendanceScreen(group: group),
+                  ),
+                );
+              }
+            },
+            itemBuilder: (context) => [
+              const PopupMenuItem(
+                value: 'attendance',
+                child: Text('Tomar asistencia'),
+              ),
+            ],
+          ),
+        ],
+      ),
+
       body: StreamBuilder<List<Student>>(
         stream: studentService.getStudents(group.id),
         builder: (context, snapshot) {
